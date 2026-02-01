@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scenes/player/ShapeDrawer.gd" id="2_drawer"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
+size = Vector2(70, 70)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_col")
+
+[node name="ShapeDrawer" type="Node2D" parent="."]
+script = ExtResource("2_drawer")
+
+[node name="ModuleSlots" type="Node2D" parent="."]
+
+[node name="SlotTop" type="Marker2D" parent="ModuleSlots"]
+position = Vector2(0, -45)
+
+[node name="SlotRight" type="Marker2D" parent="ModuleSlots"]
+position = Vector2(45, 0)
+
+[node name="SlotBottom" type="Marker2D" parent="ModuleSlots"]
+position = Vector2(0, 45)
+
+[node name="SlotLeft" type="Marker2D" parent="ModuleSlots"]
+position = Vector2(-45, 0)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("RectangleShape2D_hurt")

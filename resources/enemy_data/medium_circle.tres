@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/EnemyData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_name = "Средний круг"
+max_health = 60
+damage = 20
+speed = 90.0
+reward = 12
+color = Color(1, 0.533, 0, 1)
+shape_type = "circle"
+size = Vector2(25, 25)
